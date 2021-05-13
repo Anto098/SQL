@@ -6,7 +6,7 @@ SELECT
 FROM (SELECT @n := @n+1 AS row_index, LAT_N FROM STATION ORDER BY LAT_N) S
 WHERE
     CASE 
-        WHEN MOD(@TOTAL, 2) = 0 
+        WHEN MOD(@total, 2) = 0 
             THEN S.row_index IN (@total/2, @total/2+1)
             ELSE S.row_index = (@total+1)/2
     END
